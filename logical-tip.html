@@ -1,0 +1,36 @@
+<link rel="import" href="../paper-tooltip/paper-tooltip.html">
+<dom-module id="logical-tip">
+<style>
+</style>
+<template>
+	<content></content>
+	<paper-tooltip animation-config="[[animationConfig]]" id="pt" margin-top="[[marginTop]]">[[tip]]</paper-tooltip>
+</template>
+</dom-module>
+<script>
+	Polymer({
+		is: 'logical-tip',
+		properties: {
+			animationConfig: {
+				type: Object,
+				value: function() {
+					return {
+						'entry': [{
+							name: 'fade-in-animation',
+							node: this.$.pt
+						}],
+						'exit': [{
+							name: 'fade-out-animation',
+							node: this.$.pt,
+							timing: { delay: 0, duration: 150 }
+						}]				
+					}
+				}
+			},
+			marginTop: {
+				type: Number,
+				value: -8,
+			},
+		},
+	});
+</script>

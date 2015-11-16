@@ -1,0 +1,28 @@
+{
+  "name": "logical-tip",
+  "homepage": "https://logicdudes.github.io/logical-tip",
+  "authors": [
+    "Kevin Ashcraft <kevin@kevashcraft.com>"
+  ],
+  "description": "wrapper for paper-tooltip to bind to child",
+  "main": "logical-tip.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "paper-tooltip"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-tooltip": "polymerelements/paper-tooltip#~1.1.1"
+  }
+}
