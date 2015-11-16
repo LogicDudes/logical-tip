@@ -1,10 +1,15 @@
 <link rel="import" href="../paper-tooltip/paper-tooltip.html">
 <dom-module id="logical-tip">
 <style>
+	:host {
+		position: relative;
+	}
 </style>
 <template>
-	<content></content>
-	<paper-tooltip animation-config="[[animationConfig]]" id="pt" margin-top="[[marginTop]]">[[tip]]</paper-tooltip>
+	<span id="tip-content">
+		<content></content>
+	</span>
+	<paper-tooltip animation-config="[[animationConfig]]" margin-top="[[marginTop]]" for="tip-content" id="paperTooltip">[[tip]]</paper-tooltip>
 </template>
 </dom-module>
 <script>
@@ -17,20 +22,28 @@
 					return {
 						'entry': [{
 							name: 'fade-in-animation',
-							node: this.$.pt
+							node: this.paperTooltip,
+			                timing: {delay: 0},
 						}],
 						'exit': [{
 							name: 'fade-out-animation',
-							node: this.$.pt,
+							node: this.paperTooltip,
 							timing: { delay: 0, duration: 150 }
 						}]				
 					}
 				}
 			},
+
+
+
 			marginTop: {
 				type: Number,
 				value: -8,
 			},
 		},
+
+		get animationConfig() {
+			return this.$.paperTooltip;
+		}
 	});
 </script>

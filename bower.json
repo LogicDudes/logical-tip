@@ -1,11 +1,11 @@
 {
-  "name": "logical-tip",
-  "homepage": "https://logicdudes.github.io/logical-tip",
+  "name": "logical-tooltip",
+  "homepage": "https://logicdudes.github.io/logical-tooltip",
   "authors": [
     "Kevin Ashcraft <kevin@kevashcraft.com>"
   ],
   "description": "wrapper for paper-tooltip to bind to child",
-  "main": "logical-tip.html",
+  "main": "logical-tooltip.html",
   "moduleType": [
     "globals"
   ],
