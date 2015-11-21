@@ -1,5 +1,5 @@
 <link rel="import" href="../paper-tooltip/paper-tooltip.html">
-<dom-module id="logical-tip">
+<dom-module id="logical-tooltip">
 <style>
 	:host {
 		position: relative;
@@ -9,12 +9,12 @@
 	<span id="tip-content">
 		<content></content>
 	</span>
-	<paper-tooltip animation-config="[[animationConfig]]" margin-top="[[marginTop]]" for="tip-content" id="paperTooltip">[[tip]]</paper-tooltip>
+	<paper-tooltip position="bottom" animation-config="[[animationConfig]]" margin-top="[[marginTop]]" for="tip-content" id="paperTooltip">[[tip]]</paper-tooltip>
 </template>
 </dom-module>
 <script>
 	Polymer({
-		is: 'logical-tip',
+		is: 'logical-tooltip',
 		properties: {
 			animationConfig: {
 				type: Object,
@@ -38,7 +38,7 @@
 
 			marginTop: {
 				type: Number,
-				value: -8,
+				value: 3,
 			},
 		},
 
