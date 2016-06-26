@@ -2,48 +2,21 @@
 <dom-module id="logical-tooltip">
 <style>
 	:host {
-		position: relative;
+		--paper-tooltip: {
+			font-size: 18px;
+			margin-right: 5px;
+		};
 	}
 </style>
 <template>
 	<span id="tip-content">
 		<content></content>
 	</span>
-	<paper-tooltip position="bottom" animation-config="[[animationConfig]]" margin-top="[[marginTop]]" for="tip-content" id="paperTooltip">[[tip]]</paper-tooltip>
+	<paper-tooltip position="left" animation-delay="150" for="tip-content" id="paperTooltip">[[tip]]</paper-tooltip>
 </template>
 </dom-module>
 <script>
 	Polymer({
 		is: 'logical-tooltip',
-		properties: {
-			animationConfig: {
-				type: Object,
-				value: function() {
-					return {
-						'entry': [{
-							name: 'fade-in-animation',
-							node: this.paperTooltip,
-			                timing: {delay: 0},
-						}],
-						'exit': [{
-							name: 'fade-out-animation',
-							node: this.paperTooltip,
-							timing: { delay: 0, duration: 150 }
-						}]				
-					}
-				}
-			},
-
-
-
-			marginTop: {
-				type: Number,
-				value: 3,
-			},
-		},
-
-		get animationConfig() {
-			return this.$.paperTooltip;
-		}
 	});
 </script>
